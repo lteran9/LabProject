@@ -5,16 +5,19 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
    private bool isOnGround = true;
-   private float speed = 125.0f;
-   private float jumpForce = 150.0f;
+   private float speed = 500.0f;
+   private float jumpForce = 5.0f;
    private float areaBounds = 20.0f;
 
    private Rigidbody playerRb;
+   private GameObject focalPoint;
+
 
    // Start is called before the first frame update
    void Start()
    {
       playerRb = GetComponent<Rigidbody>();
+      focalPoint = GameObject.Find("Focal Point");
    }
 
    // Update is called once per frame
@@ -35,11 +38,9 @@ public class PlayerController : MonoBehaviour
 
    void Player_Move()
    {
-      float horizontalInput = Input.GetAxis("Horizontal");
       float verticalInput = Input.GetAxis("Vertical");
 
-      playerRb.AddForce(Vector3.forward * speed * verticalInput);
-      playerRb.AddForce(Vector3.right * speed * horizontalInput);
+      playerRb.AddForce(focalPoint.transform.forward * verticalInput * speed * Time.deltaTime);
    }
 
    void Player_Jump()
