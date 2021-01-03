@@ -25,7 +25,6 @@ public class PlayerController : MonoBehaviour
    {
       Player_Move();
       Player_Jump();
-      Player_Bounds();
    }
 
    void OnCollisionEnter(Collision other)
@@ -49,29 +48,6 @@ public class PlayerController : MonoBehaviour
       {
          playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
          isOnGround = false;
-      }
-   }
-
-   void Player_Bounds()
-   {
-      if (transform.position.x > areaBounds)
-      {
-         transform.position = new Vector3(areaBounds, transform.position.y, transform.position.z);
-      }
-
-      if (transform.position.x < -areaBounds)
-      {
-         transform.position = new Vector3(-areaBounds, transform.position.y, transform.position.z);
-      }
-
-      if (transform.position.z > areaBounds)
-      {
-         transform.position = new Vector3(transform.position.x, transform.position.y, areaBounds);
-      }
-
-      if (transform.position.z < -areaBounds)
-      {
-         transform.position = new Vector3(transform.position.x, transform.position.y, -areaBounds);
       }
    }
 }
