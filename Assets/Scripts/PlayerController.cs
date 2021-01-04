@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
    private float jumpForce = 5.0f;
    private float areaBounds = 20.0f;
 
+   private Taggable tagg;
    private Rigidbody playerRb;
    private GameObject focalPoint;
 
@@ -18,6 +19,8 @@ public class PlayerController : MonoBehaviour
    {
       playerRb = GetComponent<Rigidbody>();
       focalPoint = GameObject.Find("Focal Point");
+      tagg = GetComponent<Taggable>();
+      tagg.isTagged = true;
    }
 
    // Update is called once per frame

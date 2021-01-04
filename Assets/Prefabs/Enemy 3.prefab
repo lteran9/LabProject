@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 3859036021744502283}
   - component: {fileID: 3420956530011143388}
   - component: {fileID: 3531456664398024193}
+  - component: {fileID: 114497995990378558}
   m_Layer: 0
   m_Name: Enemy 3
-  m_TagString: Untagged
+  m_TagString: Taggable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,3 +123,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &114497995990378558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3859036021744502282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1abed515f1b09454a896e93509365ac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTagged: 0
